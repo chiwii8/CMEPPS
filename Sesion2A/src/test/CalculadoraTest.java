@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CalculadoraTest {
-	private int value1,value2,sumaTotal;
+	private int value1,value2;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
