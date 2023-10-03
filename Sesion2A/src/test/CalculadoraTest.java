@@ -48,7 +48,6 @@ class CalculadoraTest {
 		int expected = 1;
 		int actual = Calculadora.resta(value1,value2 );
 		assertEquals(expected, actual);
-		fail("Not yet implemented");
 	}
 
 	@Test
@@ -56,7 +55,6 @@ class CalculadoraTest {
 		int expected = 6;
 		int actual = Calculadora.multiplica(value1,value2 );
 		assertEquals(expected,actual);
-		fail("Not yet implemented");
 	}
 
 	@Test
@@ -64,7 +62,6 @@ class CalculadoraTest {
 		int expected = 1;
 		int actual = Calculadora.divide(value1,value2 );
 		assertEquals(expected,actual);
-		fail("Not yet implemented");
 	}
 
 }
