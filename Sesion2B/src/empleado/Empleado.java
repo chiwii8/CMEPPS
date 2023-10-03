@@ -1,25 +1,34 @@
 package empleado;
 
 public class Empleado {
-	private float VALOR_HORAS_EXTRA = 30;
-	public enum TipoEmpleado{Vendedor,Encargado};
+	public enum TipoEmpleado{Vendedor,Encargado,Otro};
+	private final static float VALOR_HORAS_EXTRA = 30;
 	
-	public float calculoNominaBruta(TipoEmpleado tipo,float ventasMes, float horasExtra) {
+	public static float calculoNominaBruta(TipoEmpleado tipo,float ventasMes, float horasExtra){
 		int salarioBase;
 		int primas = 0;
-		float valorHorasExtra = horasExtra*VALOR_HORAS_EXTRA;
-		if(tipo == TipoEmpleado.Vendedor) {
-			salarioBase = 2000;
-		}else {
-			salarioBase = 2500;
-		}
+		float valorHorasExtra = horasExtra>0? horasExtra*VALOR_HORAS_EXTRA:0;
 		
-		if(ventasMes >1000 && ventasMes <=1500) {
-			primas = 100;
-		}else if(ventasMes>1500) {
+		try {
+			if(tipo == TipoEmpleado.Vendedor) {
+				salarioBase = 2000;
+			}else {
+				salarioBase = 2500;
+			}
+		}catch(IllegalArgumentException e) {
+			System.out.println("El tipo de empleado no se ha especificado correctamente");
+			return -1;
+		};
+		
+		
+		if(ventasMes>1500) {
 			primas = 200;
 		}
-		
+		else if(ventasMes >1000) {
+			primas = 100;
+		}else {
+			primas = 0;
+		}
 		
 		
 		return salarioBase + primas + valorHorasExtra;
