@@ -15,6 +15,6 @@ public class Calculadora {
 	}
 	
 	public static int divide(int a,int b) {
-		return a/b!=0 ?a/b:-1;
+		return a/b!=0 ? a/b : -1;
 	}
 }

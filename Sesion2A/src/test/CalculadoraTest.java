@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CalculadoraTest {
-	private int value1,value2;
+	private int value1,value2,value3;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -27,6 +27,7 @@ class CalculadoraTest {
 		System.out.println("Before each");
 		value1 = 2;
 		value2 = 3;
+		value3 = 0;
 		
 	}
 
@@ -37,7 +38,6 @@ class CalculadoraTest {
 
 	@Test
 	void testSuma() {
-		fail("Not yet implemented");
 		int expected = 5;
 		int actual = Calculadora.suma(value1,value2);
 		assertEquals(expected, actual);
@@ -45,7 +45,7 @@ class CalculadoraTest {
 
 	@Test
 	void testResta() {
-		int expected = 1;
+		int expected = -1;
 		int actual = Calculadora.resta(value1,value2 );
 		assertEquals(expected, actual);
 	}
@@ -60,7 +60,14 @@ class CalculadoraTest {
 	@Test
 	void testDivide() {
 		int expected = 1;
-		int actual = Calculadora.divide(value1,value2 );
+		int actual = Calculadora.divide(value2,value1 );
+		assertEquals(expected,actual);
+	}
+	
+	@Test
+	void testDividepor0() {
+		int expected = - 1;
+		int actual = Calculadora.divide(value3,value2 );
 		assertEquals(expected,actual);
 	}
 
