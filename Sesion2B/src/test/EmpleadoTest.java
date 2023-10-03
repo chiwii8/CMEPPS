@@ -52,8 +52,9 @@ class EmpleadoTest {
 	/*
 	 * No se puede producir un tipoEmpleado con otro valor que no se haya definido por lo que se ha recurrido a una 
 	 * llamada a valueOf() para poder emplear otro tipo,
-	 * pero como no existe salta una excepcion que debería controlarse y al saltar dicha excepción se considera como fail
-	 * ya que no debería seguir ejecutándose
+	 * pero como no existe salta una excepcion que debería controlarse y al saltar dicha excepción se considera como error
+	 * ya que lo pasamos como parámetro y se detiene el proceso
+	 * por lo que este test está echo para que falle
 	 * */
 	@Test
 	void testCalculoNominaBrutaOtro() {
@@ -107,8 +108,35 @@ class EmpleadoTest {
 	}
 	
 	@Test
-	void testCalculoNominaNeta() {
-		fail("Not yet implemented");
+	void testCalculoNominaNetaNegativa() {
+		float expected = -1;	///Equivalente a fallo en la operación
+		float nominaBruta = -5;
+		float actual = Empleado.calculoNominaNeta(nominaBruta);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void testCalculoNominaNeta0y2100() {
+		float expected = 2000;
+		float nominaBruta = 2000;
+		float actual = Empleado.calculoNominaNeta(nominaBruta);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	void testCalculoNominaNeta2100y2500() {
+		float expected = 2040;
+		float nominaBruta = 2400;
+		float actual = Empleado.calculoNominaNeta(nominaBruta);
+		assertEquals(expected, actual);
 	}
 
+	@Test
+	void testCalculoNominaNeta2500ymas() {
+		float expected = 3280;
+		float nominaBruta = 4000;
+		float actual = Empleado.calculoNominaNeta(nominaBruta);
+		assertEquals(expected, actual);
+	}
+	
 }

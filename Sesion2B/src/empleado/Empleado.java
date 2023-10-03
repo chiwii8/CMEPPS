@@ -1,7 +1,7 @@
 package empleado;
 
 public class Empleado {
-	public enum TipoEmpleado{Vendedor,Encargado,Otro};
+	public enum TipoEmpleado{Vendedor,Encargado};
 	private final static float VALOR_HORAS_EXTRA = 30;
 	
 	public static float calculoNominaBruta(TipoEmpleado tipo,float ventasMes, float horasExtra){
@@ -34,14 +34,16 @@ public class Empleado {
 		return salarioBase + primas + valorHorasExtra;
 	}
 	
-	public float calculoNominaNeta(float nominaBruta) {
+	public static float calculoNominaNeta(float nominaBruta) {
 		float retencion = 0;
 		
 		if(nominaBruta >=2500) {
 			retencion = 0.18f;
 		}
-		else if(2100< nominaBruta ){
+		else if(nominaBruta > 2100){
 			retencion = 0.15f; 
+		}else if(nominaBruta<0) {
+			return -1;
 		}
 		
 		return nominaBruta*(1-retencion);
