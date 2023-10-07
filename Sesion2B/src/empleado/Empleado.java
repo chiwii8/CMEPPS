@@ -1,7 +1,7 @@
 package empleado;
 
 public class Empleado {
-	public enum TipoEmpleado{Vendedor,Encargado};
+	public enum TipoEmpleado{Vendedor,Encargado,Otro};
 	private final static float VALOR_HORAS_EXTRA = 30;
 	
 	public static float calculoNominaBruta(TipoEmpleado tipo,float ventasMes, float horasExtra)throws IllegalArgumentException{
@@ -25,8 +25,10 @@ public class Empleado {
 			primas = 0;
 		}
 		
-		return salarioBase + primas + valorHorasExtra;
-	
+		if(salarioBase!=-1)
+			return salarioBase + primas + valorHorasExtra;
+		else
+			return salarioBase;
 }
 	
 	public static float calculoNominaNeta(float nominaBruta) {

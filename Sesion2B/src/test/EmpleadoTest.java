@@ -52,9 +52,12 @@ class EmpleadoTest {
 	/*
 	 * No se puede producir un tipoEmpleado con otro valor que no se haya definido por lo que se ha recurrido a una 
 	 * llamada a valueOf() para poder emplear otro tipo,
-	 * pero como no existe salta una excepcion que debería controlarse y al saltar dicha excepción se considera como error
+	 * pero como no existe, salta una excepcion que debería controlarse y al saltar dicha excepción se considera como error
 	 * ya que lo pasamos como parámetro y se detiene el proceso
 	 * por lo que este test está echo para que falle
+	 * 
+	 * En caso de añadir al enum otro valor y lo medimos, debe de dar -1 ya que no está contemplado en el método.
+	 * Para verificar está resolución se añade Otro al enum TipoEmpleado y se evalúa.
 	 * */
 	@Test
 	void testCalculoNominaBrutaOtro() {
