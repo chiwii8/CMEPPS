@@ -4,7 +4,7 @@ public class Empleado {
 	public enum TipoEmpleado{Vendedor,Encargado,Otro};
 	private final static float VALOR_HORAS_EXTRA = 30;
 	
-	public static float calculoNominaBruta(TipoEmpleado tipo,float ventasMes, float horasExtra)throws IllegalArgumentException{
+	public static float calculoNominaBruta(TipoEmpleado tipo,float ventasMes, float horasExtra){
 		int salarioBase = -1;
 		int primas = 0;
 		float valorHorasExtra = horasExtra>0? horasExtra*VALOR_HORAS_EXTRA:0;
