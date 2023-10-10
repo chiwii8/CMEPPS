@@ -38,9 +38,9 @@ class CuentaTest {
 	}
 	
 	@Test
-	void testReingreso() {
-		//cuenta.reingreso();
-		fail("Not yet implemented");
+	void testRetirar() {
+		cuenta.retirar(50.5f);
+		assertEquals(50.5f, cuenta.getSaldo());
 	}
 
 }

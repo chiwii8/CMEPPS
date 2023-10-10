@@ -9,7 +9,7 @@ public class Cuenta {
 	}
 	
 	public double getSaldo() {
-		return 1000;
+		return saldo;
 	}
 
 	public void setSaldo(double saldo) {
@@ -18,8 +18,14 @@ public class Cuenta {
 
 
 
-	public void ingresar(int ingreso) {
+	public void ingresar(double ingreso) {
+		saldo+=ingreso;
+	}
+
+	public void retirar(double retirado) {
+		
 		
 	}
+
 	
 }
