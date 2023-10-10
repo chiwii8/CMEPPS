@@ -41,9 +41,18 @@ class CalculadoraTest {
 		assertEquals(actual, expected);
 		
 	}
-	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testMultiplica() {
+		int expected = 25;
+		int actual = Calculadora.multiplica(5,5);
+		assertEquals(actual, expected);
+		
 	}
+	void testDivide() {
+		int expected = 1;
+		int actual = Calculadora.divide(5,5);
+		assertEquals(actual, expected);
+		
+	}
+	
 
 }
