@@ -24,6 +24,7 @@ class CuentaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		cuenta.setSaldo(0);
 	}
 
 	@AfterEach
@@ -34,13 +35,13 @@ class CuentaTest {
 	void testIngreso() {
 		int expected = 1000;
 		cuenta.ingresar(1000);
-		assertEquals(cuenta.getSaldo(), expected);
+		assertEquals(expected,cuenta.getSaldo());
 	}
 	
 	@Test
 	void testRetirar() {
-		cuenta.retirar(50.5f);
-		assertEquals(50.5f, cuenta.getSaldo());
+		cuenta.retirar(500);
+		assertEquals(cuenta.getSaldo(),-500);
 	}
 
 }

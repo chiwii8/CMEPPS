@@ -23,8 +23,7 @@ public class Cuenta {
 	}
 
 	public void retirar(double retirado) {
-		
-		
+			this.setSaldo(this.saldo - retirado);
 	}
 
 	
