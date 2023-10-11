@@ -1,11 +1,14 @@
 package pkg;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cuenta {
 	private String mNumero;
 	private String nTitular;
 	private double saldo;
 	
-	public Cuenta(String string, String string2, int saldo) {
+	public Cuenta(String string, String string2, double saldo) {
 		mNumero = string;
 		nTitular = string2;
 		this.saldo = saldo;
@@ -26,7 +29,7 @@ public class Cuenta {
 	}
 
 	public void retirar(double retirado) {
-		if(retirado<=this.saldo)
+		if(-500<=saldo-retirado)
 			this.setSaldo(this.saldo - retirado);
 	}
 

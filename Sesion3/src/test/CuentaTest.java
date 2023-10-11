@@ -40,8 +40,9 @@ class CuentaTest {
 	
 	@Test
 	void testRetirar() {
+		int expected = -500;
 		cuenta.retirar(500);
-		assertEquals(cuenta.getSaldo(),-500);
+		assertEquals(expected,cuenta.getSaldo());
 	}
 	
 
