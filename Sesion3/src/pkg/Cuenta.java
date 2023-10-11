@@ -1,10 +1,13 @@
 package pkg;
 
 public class Cuenta {
+	private String mNumero;
+	private String nTitular;
 	private double saldo;
 	
 	public Cuenta(String string, String string2, int saldo) {
-		super();
+		mNumero = string;
+		nTitular = string2;
 		this.saldo = saldo;
 	}
 	
@@ -23,6 +26,7 @@ public class Cuenta {
 	}
 
 	public void retirar(double retirado) {
+		if(retirado<=this.saldo)
 			this.setSaldo(this.saldo - retirado);
 	}
 

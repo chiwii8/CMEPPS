@@ -43,5 +43,27 @@ class CuentaTest {
 		cuenta.retirar(500);
 		assertEquals(cuenta.getSaldo(),-500);
 	}
+	
+
+	@Test
+	void test0014(){
+		int expectedc12345 = -250;
+		int expectedc67890 = -450;
+		
+		Cuenta c12345 = new Cuenta ("12345","Manuel",50);
+		Cuenta c67890 = new Cuenta ("67890","Manuel",0);
+		
+		c12345.retirar(200);
+		c67890.retirar(350);
+		c12345.ingresar(100);
+		c67890.retirar(200);
+		c67890.retirar(150);
+		c12345.retirar(200);
+		c67890.ingresar(50);
+		c67890.retirar(100);
+		
+		assertEquals(expectedc12345, c12345.getSaldo());
+		assertEquals(expectedc67890, c67890.getSaldo());
+	}
 
 }
