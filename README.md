@@ -7,3 +7,5 @@ Prácticas realizadas:
   ✔️ Introducción:  Prueba
   
   ✔️ Práctica 1:  Sesion2A y Sesion2B
+
+  ✔️ Práctica 2: Sesion3 TDD
