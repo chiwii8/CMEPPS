@@ -14,17 +14,23 @@ private Long id;
 private String name;
    
 //constructors //getters and setters 
-
-   
-public Book toBook(){
-return new Book(this.id, this.name);   
-}
-
 public BookEntity(Long id, String name) {
 	super();
 	this.id = id;
 	this.name = name;
 }
+ 
+public BookEntity() {
+	super();
+}
+
+
+
+public Book toBook(){
+return new Book(this.id, this.name);   
+}
+
+
 
 public Long getId() {
 	return id;
